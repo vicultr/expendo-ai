@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from database import engine, get_db
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from logic import get_all_tables
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -62,9 +63,5 @@ def test_db(db: Session = Depends(get_db)):
     return [row[0] for row in result]
 
 
-@app.get("/tables")
-def list_tables(db: Session = Depends(get_db)):
-    result = db.execute(text("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES"))
-    return [row[0] for row in result]
 
 
