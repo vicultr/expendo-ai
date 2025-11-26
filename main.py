@@ -20,8 +20,6 @@ def clean_query(query: str) -> str:
     return query.strip()
 
 
-
-
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 

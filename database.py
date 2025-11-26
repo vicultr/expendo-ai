@@ -1,7 +1,6 @@
 import os
-from sqlalchemy import create_engine, text
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 
 # Load variables from .env
@@ -15,13 +14,6 @@ if not DATABASE_URL:
 # Engine & Session
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-
-# ✅ Automap base
-Base = automap_base()
-
-# ✅ Reflect all tables automatically
-Base.prepare(engine, reflect=True)
 
 # Dependency for FastAPI
 def get_db():
