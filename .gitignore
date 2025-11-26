@@ -1,0 +1,46 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Byte-compiled / compiled files
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml
+.cache/
+
+# FastAPI-related
+*.db
